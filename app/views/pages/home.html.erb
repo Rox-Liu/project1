@@ -1,0 +1,19 @@
+<h1>Pokemon Home</h1>
+
+<p>Welcome to Pokemon Home!</p>
+
+<p>Pokemon Home is a perfect site to store your beloved Pokemons. </p>
+
+<%= @pokemon.name %><br>
+<img src="<%=@pokemon.sprites.front_default%>">
+<% @pokemon.types.each do |type| %>
+<%= type.type.name %>
+<% end %>
+
+
+
+<% if @current_user.present? %>
+    <p>Logged in as: <%= @current_user.email %></p>
+<% end %>
+        
+<%# <%= button_to "Get Started!", @pokemon, :method => :post %> 
