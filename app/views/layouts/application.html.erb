@@ -7,14 +7,16 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= cloudinary_js_config %>
+    <link rel="stylesheet" href="pokemonhome.css">
   </head>
 
   <body>
     <nav>
-      <%# <%= link_to "Home", root_path %>
-      <%# <%= link_to "Pokemon", pokemon_show_path %>
-      <%# <%= link_to "My Pokedexes", pokedexes_path %>
-      <%# <%= link_to " My favorite Pokemon", favorite_path %> 
+      <%= link_to "Home", root_path %>
+      <%= link_to "Pokedex", pokedex_path %>
+      <%= link_to "My favorite Pokemon", pokemon_favorites_path %> 
+      <%= link_to "Search", search_path %>
 
       <% if @current_user.present? %>
         <% if @current_user.admin? %>

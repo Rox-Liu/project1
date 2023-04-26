@@ -1,28 +1,27 @@
 <h1>My Pokedex</h1>
 
-<%= link_to @region1.name %>
-<%= link_to image_tag("https://archives.bulbagarden.net/media/upload/thumb/2/25/LGPE_Kanto_Map.png/300px-LGPE_Kanto_Map.png", :class => 'thumb') %>
+<h3>Check pokemon in different maps!</h3>
+
+<%= @region1.name %>
+<%= link_to image_tag("https://archives.bulbagarden.net/media/upload/thumb/2/25/LGPE_Kanto_Map.png/300px-LGPE_Kanto_Map.png", :class => 'thumb'), pokedex_1_pokemon_path %>
 
 <%= @region2.name %>
-<%= link_to image_tag("https://archives.bulbagarden.net/media/upload/thumb/6/64/JohtoMap.png/300px-JohtoMap.png", :class => 'thumb') %>
+<%= link_to image_tag("https://archives.bulbagarden.net/media/upload/thumb/6/64/JohtoMap.png/300px-JohtoMap.png", :class => 'thumb'), pokedex_2_pokemon_path %>
 
 <%= @region3.name %>
-<%= link_to image_tag("https://archives.bulbagarden.net/media/upload/thumb/8/85/Hoenn_ORAS.png/300px-Hoenn_ORAS.png", :class => 'thumb') %>
+<%= link_to image_tag("https://archives.bulbagarden.net/media/upload/thumb/8/85/Hoenn_ORAS.png/300px-Hoenn_ORAS.png", :class => 'thumb'), pokedex_3_pokemon_path %>
 
 <%= @region4.name %>
-<%= link_to image_tag("https://archives.bulbagarden.net/media/upload/thumb/0/08/Sinnoh_BDSP_artwork.png/300px-Sinnoh_BDSP_artwork.png", :class => 'thumb') %>
+<%= link_to image_tag("https://archives.bulbagarden.net/media/upload/thumb/0/08/Sinnoh_BDSP_artwork.png/300px-Sinnoh_BDSP_artwork.png", :class => 'thumb'), pokedex_4_pokemon_path %>
 
 <%= @region5.name %>
-<%= link_to image_tag("https://archives.bulbagarden.net/media/upload/thumb/f/fc/Unova_B2W2_alt.png/300px-Unova_B2W2_alt.png", :class => 'thumb') %>
+<%= link_to image_tag("https://archives.bulbagarden.net/media/upload/thumb/f/fc/Unova_B2W2_alt.png/300px-Unova_B2W2_alt.png", :class => 'thumb'), pokedex_5_pokemon_path %>
 
 <%= @region6.name %>
-<%= link_to image_tag("https://archives.bulbagarden.net/media/upload/thumb/8/8a/Kalos_alt.png/300px-Kalos_alt.png", :class => 'thumb') %>
+<%= link_to image_tag("https://archives.bulbagarden.net/media/upload/thumb/8/8a/Kalos_alt.png/300px-Kalos_alt.png", :class => 'thumb'), pokedex_6_pokemon_path %>
 
 <%= @region7.name %>
-<%= link_to image_tag("https://archives.bulbagarden.net/media/upload/thumb/0/0b/Alola_USUM_artwork.png/300px-Alola_USUM_artwork.png", :class => 'thumb') %>
-
-<%= @region8.name %>
-<%= link_to image_tag("https://archives.bulbagarden.net/media/upload/thumb/c/ce/Galar_artwork.png/300px-Galar_artwork.png", :class => 'thumb') %>
+<%= link_to image_tag("https://archives.bulbagarden.net/media/upload/thumb/0/0b/Alola_USUM_artwork.png/300px-Alola_USUM_artwork.png", :class => 'thumb'), pokedex_7_pokemon_path %>
 
 
 

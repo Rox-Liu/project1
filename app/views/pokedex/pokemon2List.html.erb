@@ -1,0 +1,6 @@
+<% @pokemons.each do |pokemon| %>
+<%= pokemon.entry_number %><br>
+<%= pokemon.pokemon_species.name %>
+<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= pokemon.pokemon_species.url.split('/')[-1] %>.png">
+<hr>
+<% end %>

@@ -1,0 +1,15 @@
+<h1>Pokemon Search</h1>
+
+<%= form_tag search_path do %>
+    <%= label_tag :name, nil, :class => 'form-label' %>
+    <%= text_field :name, nil, :class => 'form-control' %>
+
+    <%= submit_tag "Search", :class => 'btn btn-primary btn-lg' %>
+<% end %>
+
+<%= form_tag search_path do %>
+    <%= label_tag :type, nil, :class => 'form-label' %>
+    <%= text_field :type, nil, :class => 'form-control' %>
+
+    <%= submit_tag "Search", :class => 'btn btn-primary btn-lg' %>
+<% end %>

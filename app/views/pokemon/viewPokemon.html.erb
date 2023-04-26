@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="card">
+        <div class="card-title">
+            <%= @pokemon.name %>
+        </div>
+        <div class="card-body">
+            <div class="card-image">
+                <img src="<%= @pokemon.sprites.front_default %>">
+            </div>
+            <div class="card-details">
+                <div class="type-list">
+                    <% @pokemon.types.each do |type| %>
+                        <%= type.type.name %>
+                    <% end %>
+                </div>
+
+                <%= @pokemon.weight.to_f / 10 %>kg 
+                <%= @pokemon.height.to_f / 10 %>m
+            </div>
+
+            <%= form_with(url: pokemon_favorites_path, method: :post) do |form| %>
+                <%= form.hidden_field :pokemon_id, value: @pokemon.id %>
+                <%= form.submit "Add to favourites", class: "btn btn-primary" %>
+            <% end %>
+
+            <div class="controls">
+                <%= button_to "Add to Favorite Pokemon", pokemon_favorites_path, :method => :post %>
+            </div>
+        </div>
+    </div>
+</div>

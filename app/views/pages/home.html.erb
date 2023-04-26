@@ -7,7 +7,7 @@
 <%= @pokemon.name %><br>
 <img src="<%=@pokemon.sprites.front_default%>">
 <% @pokemon.types.each do |type| %>
-<%= type.type.name %>
+    <%= type.type.name %>
 <% end %>
 
 

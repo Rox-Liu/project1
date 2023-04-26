@@ -6,9 +6,6 @@ class PagesController < ApplicationController
 
   end
 
-
-
-
   def pokedex
     @region1 = PokeApi.get(region: 1)
     @region2 = PokeApi.get(region: 2)
@@ -17,18 +14,11 @@ class PagesController < ApplicationController
     @region5 = PokeApi.get(region: 5)
     @region6 = PokeApi.get(region: 6)
     @region7 = PokeApi.get(region: 7)
-    @region8 = PokeApi.get(region: 8)
-
   end
 
-  def pokemon
-
+  def searchPokemon
+    @pokemon = PokeApi.get(pokemon: params[:id])
   end
-
-  def favorite
-
-  end
-
-
+  
 
 end

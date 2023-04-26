@@ -1,0 +1,10 @@
+<h2><%= @pokemontypename %></h2>
+
+<h3> 
+    <% @pokemonlist.each do |pokemon| %>
+        <%= pokemon.pokemon.name %><br>
+        <% pokemon_id = pokemon.pokemon.url.split('/')[-1] %>
+        <%= link_to image_tag("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + pokemon_id + ".png", :class => "thumb"), "/pokemon/" + pokemon_id %>
+        <hr>
+    <% end %>
+</h3>
