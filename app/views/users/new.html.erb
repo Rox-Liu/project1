@@ -1,4 +1,4 @@
-<h1>Sign up!</h1>
+<h1>Welcome to Pokemon Trainer's Family!</h1>
 
 <% if @user.errors.any? %>
     <ol>
@@ -7,7 +7,8 @@
         <% end %>
     </ol>
 <% end %>
-
+<h3>Join the Pokemon Trainer's Famliy</h3>
+<p>Create a Pokémon Trainer Famliy account today! With a Pokémon Trainer Family account, you can manage your favorite Pokemon profile and explore in different Pokemon regions!</p>
 <%= form_for @user do |f| %>
     <%= f.label :email %>
     <%= f.email_field :email %>
@@ -18,5 +19,5 @@
     <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation %>
 
-    <%= f.submit "Sign up!" %>
+    <%= f.submit "Create an account!"%>
 <% end %>

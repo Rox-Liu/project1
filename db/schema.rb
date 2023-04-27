@@ -17,13 +17,7 @@ ActiveRecord::Schema.define(version: 2023_04_25_152022) do
 
   create_table "favorites", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "entry_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "pokedexes", force: :cascade do |t|
-    t.integer "user_id"
+    t.integer "pokemon_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

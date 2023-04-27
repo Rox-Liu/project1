@@ -1,29 +1,37 @@
 require 'poke-api-v2'
 
 class FavoritesController < ApplicationController
+  before_action :check_for_login
+  
+  def index
+    @favorites = Favorite.all
+  end
 
-    def create
-        @favourite = current_user.favourites.new(favourite_params)
-        if @favourite.save
-        redirect_to @favourite.pokemon, notice: "Added to favourites"
-        else
-        redirect_to @favourite.pokemon, alert: "Error adding to favourites"
-        end
-    end
+  def create
+    favorite = Favorite.create favorite_params
+    @current_user.favorites << favorite
 
-    private
+    redirect_to pokemon_favorites_path
+    # alternatively: redirect_to root_path
+  end
 
-    def favourite_params
-        params.require(:favourite).permit(:pokemon_id)
-    end
+
+  def destroy
+    favourite = @current_user.favorites.find favorite_params
+    favorite.destroy
+    redirect_to pokemon_favorites_path
+  end   
+
+
+  def favoritePokemon
+    @user_id = @current_user.id
+    @favorite_pokemon = @pokemon
+  end
+
+
+  private
+  def favorite_params
+    params.require(:favorite).permit(:user_id, :pokemon_id)
+  end
     
-    def destroy
-        @favourite = current_user.favourites.find_by(pokemon_id: params[:id])
-        if @favourite.destroy
-          redirect_to favourites_path, notice: "Removed from favourites"
-        else
-          redirect_to favourites_path, alert: "Error removing from favourites"
-        end
-      end    
-      
 end

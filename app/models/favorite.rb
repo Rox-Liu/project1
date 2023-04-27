@@ -1,5 +1,5 @@
-class Favourite < ApplicationRecord
-    belongs_to :user
+class Favorite < ApplicationRecord
+    belongs_to :user, :optional => true
     belongs_to :pokemon
 end
   

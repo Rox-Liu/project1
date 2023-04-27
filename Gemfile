@@ -31,6 +31,8 @@ gem 'bcrypt', '~> 3.1.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
+
+
 gem 'cloudinary'
 
 group :development, :test do
@@ -53,3 +55,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'net-http', '~> 0.3.2'
 gem 'poke-api-v2'
+gem "dockerfile-rails", ">= 1.2", :group => :development

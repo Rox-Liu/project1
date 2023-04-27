@@ -1,5 +1,6 @@
-<h1>Login</h1>
+<h1>Welcome to Pokemon Trainer's Family!</h1>
 
+<h1>Login</h1>
 <%# # form is NOT working in rails!!!!
 # form_for is ONLY FOR CRUD %>
 <% if flash[:error].present? %>
@@ -13,5 +14,5 @@
     <%= label_tag :password %>
     <%= password_field_tag :password %>
 
-    <%= submit_tag "Sign in" %>
+    <%= submit_tag "Log in" %>
 <% end %>

@@ -1,15 +1,15 @@
 <h1>Pokemon Search</h1>
 
-<%= form_tag search_path do %>
-    <%= label_tag :name, nil, :class => 'form-label' %>
-    <%= text_field :name, nil, :class => 'form-control' %>
+<%= form_tag url: '/pokemon/:name/to/redirect', method: :post do %>
+    <%= label_tag :name, nil %>
+    <%= text_field :name, nil %>
 
-    <%= submit_tag "Search", :class => 'btn btn-primary btn-lg' %>
+    <%= submit_tag "Search" %>
 <% end %>
 
 <%= form_tag search_path do %>
-    <%= label_tag :type, nil, :class => 'form-label' %>
-    <%= text_field :type, nil, :class => 'form-control' %>
+    <%= label_tag :type, nil %>
+    <%= text_field :type, nil %>
 
-    <%= submit_tag "Search", :class => 'btn btn-primary btn-lg' %>
+    <%= submit_tag "Search" %>
 <% end %>
