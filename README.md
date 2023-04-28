@@ -1,4 +1,4 @@
-# Project 0 Pokemon Home
+# Project 1 Pokemon Home
 
 
 ## Table of Contents
@@ -24,7 +24,9 @@ This project is a perfect site to store your beloved Pokemons and wandering in d
 * You can favorite pokemon and easily remove them from the favorite list.
 
 ## Screenshots
-![a screenshot](https://github.com/Rox-Liu/Project0/blob/main/Screen%20Shot.png)
+![Screen Shot 2023-04-28 at 11 18 02 am](https://user-images.githubusercontent.com/125134359/235032214-d294deb6-ad13-49fa-a241-89fd235d84b4.png)
+
+![Uploading Screen Shot 2023-04-28 at 11.18.29 am.png…]()
 
 
 ## Project Status
