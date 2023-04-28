@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root :to => 'pages#home'
   resources :users, :only => [:index, :new, :create]
-  resources :favourites, only: [:index, :create, :destroy]
+  resources :favorites
   
 
   get '/pokedex' => 'pages#pokedex'
@@ -13,19 +13,16 @@ Rails.application.routes.draw do
   get '/pokedex/6/pokemon' => 'pokedex#pokemon6List'
   get '/pokedex/7/pokemon' => 'pokedex#pokemon7List'
 
-  get '/pokemon/favorites' => 'favorites#favoritePokemon'
-  post '/pokemon/:id' => 'favorites#favoritePokemon'
+  get '/pokemon/favorites' => 'favorites#index'
+  post '/favorites/:id' => 'favorites#create', :as => 'favorite_pokemon'
   
-  get '/pokemon/:id' => 'pokemon#viewPokemon'
+  get '/pokemon/:id' => 'pokemon#show', :as => 'pokemon'
   post '/pokemon/:id' => 'pokemon#viewPokemon'
 
   get '/search' => 'pages#searchPokemon'
-  
-  get '/search' => 'pages#searchPokemon'
-  post '/search/byname/:id' => 'pokemon#viewPokemon'
-  get '/search' => 'pages#searchPokemon'
-  post '/search/bytype/:id' => 'search#byType'
-
+  post '/search/:id' => 'pokemon#viewPokemon'
+  get '/search/bytype' => 'search#byType'
+  get '/search/byname' => 'pokemon#viewPokemon'
 
 
   get '/login' => 'session#new' # session controller

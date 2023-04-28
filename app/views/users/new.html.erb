@@ -1,23 +1,26 @@
-<h1>Welcome to Pokemon Trainer's Family!</h1>
+<div class="sign-up">
+    <h1>Welcome to Pokemon Trainer's Family!</h1>
 
-<% if @user.errors.any? %>
-    <ol>
-        <% @user.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>    
-        <% end %>
-    </ol>
-<% end %>
-<h3>Join the Pokemon Trainer's Famliy</h3>
-<p>Create a Pokémon Trainer Famliy account today! With a Pokémon Trainer Family account, you can manage your favorite Pokemon profile and explore in different Pokemon regions!</p>
-<%= form_for @user do |f| %>
-    <%= f.label :email %>
-    <%= f.email_field :email %>
+    <% if @user.errors.any? %>
+        <ol>
+            <% @user.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>    
+            <% end %>
+        </ol>
+    <% end %>
+    <h3>Join the Pokemon Trainer's Famliy</h3>
+    <p>Create a Pokémon Trainer Famliy account today! With a Pokémon Trainer Family account, you can manage your favorite Pokemon profile and explore in different Pokemon regions!</p>
+    <%= form_for @user do |f| %>
+        <%= f.label :email %>
+        <%= f.email_field :email %>
 
-    <%= f.label :password %>
-    <%= f.password_field :password %>
+        <%= f.label :password %>
+        <%= f.password_field :password %>
 
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
-
-    <%= f.submit "Create an account!"%>
-<% end %>
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation %>
+        <div class="sign-up-button">
+        <%= f.submit "Create an account!"%>
+        </div>
+    <% end %>
+</div>

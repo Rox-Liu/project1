@@ -4,34 +4,27 @@ class FavoritesController < ApplicationController
   before_action :check_for_login
   
   def index
-    @favorites = Favorite.all
+    @favorites = Favorite.where(user_id: @current_user.id).where.not(pokemon_id: nil)
+    @favorite_pokemon = []
+    @favorites.each do |favorite|
+      @favorite_pokemon << PokeApi.get(pokemon: favorite.pokemon_id)
+    end
   end
 
   def create
-    favorite = Favorite.create favorite_params
-    @current_user.favorites << favorite
-
-    redirect_to pokemon_favorites_path
-    # alternatively: redirect_to root_path
+    Favorite.create(user_id: @current_user.id, pokemon_id: params[:id])
+    redirect_to favorites_path
   end
-
 
   def destroy
-    favourite = @current_user.favorites.find favorite_params
-    favorite.destroy
-    redirect_to pokemon_favorites_path
-  end   
-
-
-  def favoritePokemon
-    @user_id = @current_user.id
-    @favorite_pokemon = @pokemon
+    favorite = Favorite.where(pokemon_id: params[:id], user_id: @current_user.id).take
+    favorite.destroy 
+    redirect_to favorites_path
   end
-
 
   private
   def favorite_params
-    params.require(:favorite).permit(:user_id, :pokemon_id)
+    params.require(:favorite).permit(:user_id, :pokemon_id, :favorite_params)
   end
     
 end

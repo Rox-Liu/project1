@@ -4,13 +4,9 @@
     <p>Logged in as: <%= @current_user.email %></p>
 <% end %>
 
-
-
-
-
-<% @favorite_pokemon.each do |pokemon| %>
-  <h3><%= link_to pokemon.name, view_pokemon_path(pokemon.id) %></h3>
-  <%= form_tag(remove_favorite_pokemon_path(pokemon.id), method: :delete) do %>
-    <%= submit_tag 'Remove from favorites' %>
-  <% end %>
+<% @favorite_pokemon.results.each do |pokemon| %>
+  <h3><%= link_to pokemon.name, pokemon_path(pokemon.id) %></h3>
+        <%= form_tag(remove_favorite_pokemon_path(pokemon.id), method: :delete) do %>
+        <%= submit_tag 'Remove from favorites' %>
+    <% end %>
 <% end %>

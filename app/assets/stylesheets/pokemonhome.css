@@ -1,15 +1,162 @@
-/*  */
-/* Change color of dropdown links on hover */
-
-
-.navbar {
-    margin-top: 60px;
-    margin-bottom: 40px;
-    line-height: 60px;
-    display: flex;
-    justify-content: space-between;
-    font-size: 20px;
+body {
+    background-image: url("https://pbs.twimg.com/media/Fp-wzrpXgAMQali?format=jpg&name=large") !important;
 }
 
-.navbar a:hover {background-color: #ddd;}
+html, body, * {
+    color:midnightblue !important;
+    font-family: 'Arima', cursive;
+}
 
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 1em;
+}
+
+.heading {
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+   
+}
+
+.headingimg {
+    height: 43px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    gap: 1.5rem;
+}
+
+.navbar img {
+    height: 2rem;
+    width: 2rem;
+}
+
+.navbar .nav-link {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.navbar a{
+    color:darkblue;
+}
+
+.navbar a:hover {
+    background-color:yellowgreen;
+}
+
+.homepage {
+    margin-top: 50px;
+    color:darkblue;
+}
+
+.homepage h1 {
+    color:darkblue;
+}
+
+.signup {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.regions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 50px;
+}
+.regions h1 {
+    text-transform: capitalize;
+    font-size: 20px;
+}
+.region {
+    flex-grow: 1;
+    max-width: calc(50% - 11.5rem);
+}
+.region img {
+    width: 100%;
+}
+.regiondetails {
+    margin-top: 70px;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.regionhead {
+    text-align: center;
+    margin-top: 50px;
+}
+.regiondetails .pokemon {
+    background: white;
+    border-radius: .5rem;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 0 1.5px 1.5px rgba(0,0,0,.34);
+}
+
+.pokedex {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.card {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.card-title {
+    font-size: 50px;
+    font-weight:1000;
+
+}
+
+.controls {
+    margin-top: 40px;
+}
+
+.search {
+    text-align: center;
+    margin-top: 80px;
+}
+
+.search-title {
+    font-size: 50px;
+}
+
+.search-button {
+    margin-bottom: 30px;
+}
+
+.typehead {
+    font-size: 50px;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.login-head {
+    margin-top: 80px;
+}
+
+.login {
+    font-size: 200;
+}
+
+.sign-up-button {
+    margin-top: 40px;
+    text-align: center;
+}

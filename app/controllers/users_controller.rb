@@ -13,7 +13,6 @@ class UsersController < ApplicationController
   # THIN CONTROLLERS 
   # so go to models and add lines to validate
 
-
   def create
     @user = User.create user_params # in memorey AND tries
     if @user.save # the @ here is to save the email address, so users won't need to input it again

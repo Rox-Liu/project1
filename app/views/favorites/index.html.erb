@@ -1,0 +1,25 @@
+<h1>My Favorite Pokemon</h1>
+
+<% if @current_user.present? %>
+    <p>
+        Logged in as: <%= @current_user.email %>
+    </p>
+<% end %>
+
+<% @favorite_pokemon.each do |pokemon| %>
+    <h3>
+        <%= link_to pokemon.name, pokemon_path(pokemon.id) %>
+    </h3>
+    <%= form_tag(favorite_path(pokemon.id), method: :delete, :data => { :confirm => 'Are you sure?' }) do %>
+        <%= submit_tag 'Remove from favorites' %>
+    <% end %>
+<% end %>
+
+
+
+
+
+
+
+
+

@@ -1,23 +1,21 @@
-<h1>Pokemon Home</h1>
+<div class="homepage">
+    <h1>Pokemon Home</h1>
 
-<p>Welcome to Pokemon Home!</p>
+    <% if @current_user.present? %>
+        <p>Logged in as: <%= @current_user.email %></p>
+    <% end %>
 
-<% if @current_user.present? %>
-    <p>Logged in as: <%= @current_user.email %></p>
-<% end %>
+    <p>Welcome to Pokemon Home!</p>
 
-<p>Pokemon Home is a perfect site to store your beloved Pokemons. </p>
+    <p>Pokemon Home is a perfect site to store your beloved Pokemons. </p>
 
-
-<img class="homepage" src="https://cdn.vox-cdn.com/thumbor/orZvS6nGmcY9M6CdN1L8CiKFoRA=/0x0:1920x1280/1400x933/filters:focal(1365x447:1671x753):no_upscale()/cdn.vox-cdn.com/uploads/chorus_image/image/72017445/pokemon_day_2023.0.jpg" alt="Pokemon World">
-<%= @pokemon.name %><br>
-<img src="<%=@pokemon.sprites.front_default%>">
-<% @pokemon.types.each do |type| %>
-    <%= type.type.name %>
-<% end %>
-
-
+    <div class="signup">
+        <% unless @current_user.present? %>
+        <%= button_to "Sign Up Now!", new_user_path, :method => :get%>
+        <img src="<%= asset_path('pokemon-trainer.png') %>" alt="favorite icon">
+        <% end %>
+    </div>
+</div>
 
 
         
-<%# <%= button_to "Get Started!", @pokemon, :method => :post %> 

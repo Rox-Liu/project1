@@ -1,6 +1,12 @@
-<% @pokemons.each do |pokemon| %>
-<%= pokemon.entry_number %><br>
-<%= pokemon.pokemon_species.name %>
-<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= pokemon.pokemon_species.url.split('/')[-1] %>.png">
-<hr>
-<% end %>
+
+<h1 class="regionhead">Kalos</h1> 
+<div class="regiondetails">
+    <% @pokemons.each do |pokemon| %>
+    <div class="pokemon">
+        <div class="pokemon-name">
+            # <%= pokemon.entry_number %> - <%= pokemon.pokemon_species.name %>
+        </div>
+        <%= link_to image_tag("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + pokemon.pokemon_species.url.split('/')[-1] + ".png"), "/pokemon/" + pokemon.entry_number.to_s %>
+    </div>
+    <% end %>
+</div>

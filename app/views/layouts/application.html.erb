@@ -8,32 +8,54 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= cloudinary_js_config %>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
-    <link rel="stylesheet" href="pokemonhome.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arima:wght@200;300;400;600&family=Mouse+Memoirs&family=Saira:ital,wght@0,200;0,600;1,200&display=swap" rel="stylesheet"><link rel="stylesheet" href="pokemonhome.css">
 
   </head>
 
   <body>
-    <nav class="navbar">
-      <%= link_to "Home", root_path %>
-      <%= link_to "Pokedex", pokedex_path %>
-      
-      <%= link_to "Search", search_path %>
+    <div class="container">
+      <div class="heading">
+        <img class="headingimg" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/800px-International_Pok%C3%A9mon_logo.svg.png" alt="Pokemon World">
+        <nav class="navbar">
+          <div class="nav-link">
+            <%= link_to "Home", root_path %>
+            <img src="<%= asset_path('pikachu.png') %>" alt="pokeball icon">
+          </div>
 
+          <div class="nav-link">
+            <%= link_to "Pokedex", pokedex_path %>
+            <img src="<%= asset_path('map.png') %>" alt="pikachu icon">
+          </div>
 
-      <% if @current_user.present? %>
-        <% if @current_user.admin? %>
-          <%= link_to "All users", users_path %>
-        <% end %>
-      
-        <%= link_to "My favorite Pokemon", pokemon_favorites_path %>  
-        <%= link_to "Log out #{ @current_user.email }", login_path, :method => :delete %>
-      <% else %>
-        <%= link_to "Sign up!", new_user_path %>
-        <%= link_to "Log in", login_path %>
-      <% end %>
-    </nav>
-    
-    <%= yield %>
+          <div class="nav-link">
+            <%= link_to "Search", search_path %>
+            <img src="<%= asset_path('search.png') %>" alt="Search icon">
+          </div>
+
+          <% if @current_user.present? %>
+            <% if @current_user.admin? %>
+              <div class="nav-link">
+                <%= link_to "All users", users_path %>
+              </div>
+            <% end %>
+
+            <div class="nav-link">
+              <%= link_to "Favorites", pokemon_favorites_path %>  
+              <img src="<%= asset_path('star.png') %>" alt="favorite icon">
+            </div>
+            <%= link_to "Log out #{ @current_user.email }", login_path, :method => :delete %>
+          <% else %>
+            <div class="nav-link">
+              <%= link_to "Log in", login_path %>
+              <img src="<%= asset_path('pokemon-trainer.png') %>" alt="favorite icon">
+            </div>
+          <% end %>
+        </nav>
+      </div>
+      <%= yield %>
+    </div>
   </body>
 </html>

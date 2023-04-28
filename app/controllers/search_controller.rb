@@ -7,7 +7,7 @@ class SearchController < ApplicationController
   end
 
   def byType
-    @pokemontype = PokeApi.get(type: params[:id])
+    @pokemontype = PokeApi.get(type: params[:type].downcase)
     @pokemontypename = @pokemontype.name
     @pokemonlist = @pokemontype.pokemon
   end

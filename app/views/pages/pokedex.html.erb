@@ -1,44 +1,54 @@
-<h1>My Pokedex</h1>
+<div class="pokedex">
+    <h1>My Pokedex</h1>
 
-<h3>Check pokemon in different maps!</h3>
+    <h3>Check pokemon in different maps!</h3>
+</div>
 
-<%= @region1.name %>
-<%= link_to image_tag("https://archives.bulbagarden.net/media/upload/thumb/2/25/LGPE_Kanto_Map.png/300px-LGPE_Kanto_Map.png", :class => 'thumb'), pokedex_1_pokemon_path %>
+<div class="regions">
+<div class="region">
+    <h1>
+        <%= @region1.name %>
+    </h1>
+    <%= link_to image_tag("https://archives.bulbagarden.net/media/upload/thumb/2/25/LGPE_Kanto_Map.png/300px-LGPE_Kanto_Map.png", :class => 'thumb'), pokedex_1_pokemon_path %>
+</div>
+<div class="region">
+    <h1>
+        <%= @region2.name %>    
+    </h1>
+    <%= link_to image_tag("https://archives.bulbagarden.net/media/upload/thumb/6/64/JohtoMap.png/300px-JohtoMap.png", :class => 'thumb'), pokedex_2_pokemon_path %>
+</div>
+<div class="region">
+    <h1>
+        <%= @region3.name %>
+    </h1>
+    <%= link_to image_tag("https://archives.bulbagarden.net/media/upload/thumb/8/85/Hoenn_ORAS.png/300px-Hoenn_ORAS.png", :class => 'thumb'), pokedex_3_pokemon_path %>
+</div>
+<div class="region">
+    <h1>
+        <%= @region4.name %>
+    </h1>
+    <%= link_to image_tag("https://archives.bulbagarden.net/media/upload/thumb/0/08/Sinnoh_BDSP_artwork.png/300px-Sinnoh_BDSP_artwork.png", :class => 'thumb'), pokedex_4_pokemon_path %>
+</div>
+<div class="region">
+    <h1>
+        <%= @region5.name %>
+    </h1>
+    <%= link_to image_tag("https://archives.bulbagarden.net/media/upload/thumb/f/fc/Unova_B2W2_alt.png/300px-Unova_B2W2_alt.png", :class => 'thumb'), pokedex_5_pokemon_path %>
+</div>
+<div class="region">
+    <h1>
+        <%= @region6.name %>
+    </h1>
+    <%= link_to image_tag("https://archives.bulbagarden.net/media/upload/thumb/8/8a/Kalos_alt.png/300px-Kalos_alt.png", :class => 'thumb'), pokedex_6_pokemon_path %>
+</div>
+<div class="region">
+    <h1>
+        <%= @region7.name %>
+    </h1>
+    <%= link_to image_tag("https://archives.bulbagarden.net/media/upload/thumb/0/0b/Alola_USUM_artwork.png/300px-Alola_USUM_artwork.png", :class => 'thumb'), pokedex_7_pokemon_path %>
+</div>
 
-<%= @region2.name %>
-<%= link_to image_tag("https://archives.bulbagarden.net/media/upload/thumb/6/64/JohtoMap.png/300px-JohtoMap.png", :class => 'thumb'), pokedex_2_pokemon_path %>
-
-<%= @region3.name %>
-<%= link_to image_tag("https://archives.bulbagarden.net/media/upload/thumb/8/85/Hoenn_ORAS.png/300px-Hoenn_ORAS.png", :class => 'thumb'), pokedex_3_pokemon_path %>
-
-<%= @region4.name %>
-<%= link_to image_tag("https://archives.bulbagarden.net/media/upload/thumb/0/08/Sinnoh_BDSP_artwork.png/300px-Sinnoh_BDSP_artwork.png", :class => 'thumb'), pokedex_4_pokemon_path %>
-
-<%= @region5.name %>
-<%= link_to image_tag("https://archives.bulbagarden.net/media/upload/thumb/f/fc/Unova_B2W2_alt.png/300px-Unova_B2W2_alt.png", :class => 'thumb'), pokedex_5_pokemon_path %>
-
-<%= @region6.name %>
-<%= link_to image_tag("https://archives.bulbagarden.net/media/upload/thumb/8/8a/Kalos_alt.png/300px-Kalos_alt.png", :class => 'thumb'), pokedex_6_pokemon_path %>
-
-<%= @region7.name %>
-<%= link_to image_tag("https://archives.bulbagarden.net/media/upload/thumb/0/0b/Alola_USUM_artwork.png/300px-Alola_USUM_artwork.png", :class => 'thumb'), pokedex_7_pokemon_path %>
 
 
 
-
-<%# <img src="<%=@pokemon.sprites.front_default %>
-
-
-<%# 
-KANTO :https://archives.bulbagarden.net/media/upload/thumb/2/25/LGPE_Kanto_Map.png/300px-LGPE_Kanto_Map.png
-JOHTO :https://archives.bulbagarden.net/media/upload/thumb/6/64/JohtoMap.png/300px-JohtoMap.png
-HOENN :https://archives.bulbagarden.net/media/upload/thumb/8/85/Hoenn_ORAS.png/300px-Hoenn_ORAS.png
-SINNOH :https://archives.bulbagarden.net/media/upload/thumb/0/08/Sinnoh_BDSP_artwork.png/300px-Sinnoh_BDSP_artwork.png
-UNOVA: https://archives.bulbagarden.net/media/upload/thumb/f/fc/Unova_B2W2_alt.png/300px-Unova_B2W2_alt.png
-KALOS: https://archives.bulbagarden.net/media/upload/thumb/8/8a/Kalos_alt.png/300px-Kalos_alt.png
-ALOLA: https://archives.bulbagarden.net/media/upload/thumb/0/0b/Alola_USUM_artwork.png/300px-Alola_USUM_artwork.png
-GALAR: https://img.gamewith.net/article/thumbnail/rectangle/13350.png
-
-https://archives.bulbagarden.net/media/upload/thumb/c/ce/Galar_artwork.png/300px-Galar_artwork.png
-
-%>
+</div>

@@ -1,24 +1,44 @@
-# README
+# Project 0 Pokemon Home
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+## Table of Contents
+* General Info
+* Technologies Used
+* Features
+* Screenshots
+* Project Status
+* Room for Improvement
+* Acknowledgements
+* Contact
 
-* Ruby version
+## General Info
+This project is a perfect site to store your beloved Pokemons and wandering in different Pokemon regions. 
 
-* System dependencies
+## Technologies Used
+* Ruby on Rails v5.2.8.1
+* HTML
+* CSS
 
-* Configuration
+## Features
+* It can let you check all pokemon from different regions
+* You can favorite pokemon and easily remove them from the favorite list.
 
-* Database creation
+## Screenshots
+![a screenshot](https://github.com/Rox-Liu/Project0/blob/main/Screen%20Shot.png)
 
-* Database initialization
 
-* How to run the test suite
+## Project Status
+This project is still in progress.
 
-* Services (job queues, cache servers, search engines, etc.)
+## Room for Improvement
+Room for improvement:
+* Support users to make friends and can see their favroite pokemon.
 
-* Deployment instructions
+## Acknowledgements
+This project was inspired by Joel.
+Many thanks to Joel, Mark, Tina, CJ and of course all my lovely classmates!
 
-* ...
+## Contact
+Feel free to [contact me](https://github.com/Rox-Liu)!
+
+

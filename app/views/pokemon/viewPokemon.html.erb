@@ -1,4 +1,4 @@
-<div class="container">
+<div class="pokecontainer">
     <div class="card">
         <div class="card-title">
             <%= @pokemon.name %>
@@ -14,13 +14,14 @@
                     <% end %>
                 </div>
 
-                <%= @pokemon.weight.to_f / 10 %>kg 
-                <%= @pokemon.height.to_f / 10 %>m
+                Weight: <%= @pokemon.weight.to_f / 10 %>kg <br>
+                Hight: <%= @pokemon.height.to_f / 10 %>m
             </div>
 
 
             <div class="controls">
-                <%= button_to "Add to Favorite Pokemon", pokemon_favorites_path, :method => :post %>
+                <%= button_to "Add to Favorite Pokemon", favorite_path(@pokemon.id), :method => :post %>
+                <%= button_to "Remove from Favorite Pokemon", favorite_path(@pokemon.id), :method => :delete, :data => { :confirm => 'Are you sure?' } %>
             </div>
         </div>
     </div>
