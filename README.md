@@ -26,8 +26,6 @@ This project is a perfect site to store your beloved Pokemons and wandering in d
 ## Screenshots
 ![Screen Shot 2023-04-28 at 11 18 02 am](https://user-images.githubusercontent.com/125134359/235032214-d294deb6-ad13-49fa-a241-89fd235d84b4.png)
 
-![Uploading Screen Shot 2023-04-28 at 11.18.29 am.png…]()
-
 
 ## Project Status
 This project is still in progress.
