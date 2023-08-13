@@ -16,15 +16,5 @@ class PagesController < ApplicationController
     @region7 = PokeApi.get(region: 7)
   end
 
-  def searchPokemon
-    @pokemon = PokeApi.get(pokemon: params[:id])
-    if params[:name].present?
-      @pokemon = PokeApi.get(pokemon: params[:name])
-    elsif params[:type].present?
-       @pokemon = PokeApi.get(pokemon: params[:type])
-    end
-      
-  end
   
-
 end

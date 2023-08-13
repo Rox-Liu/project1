@@ -17,13 +17,10 @@ Rails.application.routes.draw do
   post '/favorites/:id' => 'favorites#create', :as => 'favorite_pokemon'
   
   get '/pokemon/:id' => 'pokemon#show', :as => 'pokemon'
-  post '/pokemon/:id' => 'pokemon#viewPokemon'
 
-  get '/search' => 'pages#searchPokemon'
-  post '/search/:id' => 'pokemon#viewPokemon'
-  get '/search/bytype' => 'search#byType'
-  get '/search/byname' => 'pokemon#viewPokemon'
-
+  get '/search' => 'search#getSearchPokemon'
+  get '/search/result' => 'search#getResult'
+  get '/search/byType/:type' => 'search#getByType', :as => 'search_by_type'
 
   get '/login' => 'session#new' # session controller
   post '/login' => 'session#create'

@@ -1,0 +1,25 @@
+<div class="search">
+    <h1 class="search-title">Pokemon Search</h1>
+    <div class="search-button">
+        <%= form_tag search_result_path, method: :get do %>
+            <%= label_tag :pokemon_name, nil %>
+            <%= text_field_tag :pokemon_name, "", options = {'list' => 'pokemon-list'} %>
+            <datalist id="pokemon-list">
+                <% @everyPokemon.each do |pokemon| %>
+                <option><%= pokemon.name.upcase_first %></option>
+                <% end %>
+            </datalist>
+            <%= submit_tag "Go!" %>
+        <% end %>
+    </div>
+
+    <h1>Or</h1>
+
+    <div class="pokemon-types-list">
+        <% @everyType.each do |type| %>
+            <div class="type">
+                <%= link_to type.name.upcase_first, search_by_type_path(type.name) %>
+            </div>
+        <% end %>
+    </div>
+</div>

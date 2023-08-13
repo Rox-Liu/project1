@@ -12,7 +12,7 @@
     <div class="signup">
         <% unless @current_user.present? %>
         <%= button_to "Sign Up Now!", new_user_path, :method => :get%>
-        <img src="<%= asset_path('pokemon-trainer.png') %>" alt="favorite icon">
+        <img src="<%= asset_path('pokemon-trainer.png') %>" alt="signup icon">
         <% end %>
     </div>
 </div>

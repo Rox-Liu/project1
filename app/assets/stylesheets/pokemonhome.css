@@ -1,5 +1,6 @@
 body {
     background-image: url("https://pbs.twimg.com/media/Fp-wzrpXgAMQali?format=jpg&name=large") !important;
+    background-attachment: fixed;
 }
 
 html, body, * {
@@ -106,8 +107,11 @@ html, body, * {
     justify-content: center;
     flex-direction: column;
     box-shadow: 0 1.5px 1.5px rgba(0,0,0,.34);
+    transition: transform .18s ease;
 }
-
+.regiondetails .pokemon:hover {
+    transform: scale(1.05);
+}
 .pokedex {
     margin-top: 50px;
     text-align: center;
@@ -121,12 +125,35 @@ html, body, * {
 
 .card-title {
     font-size: 50px;
-    font-weight:1000;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
 }
-
+.card-title .next-pokemon,
+.card-title .prev-pokemon {
+    font-size: 1rem;
+}
+.pokemon-types-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+}
+.pokemon-types-list .type {
+    height: 5rem;
+    border-radius: .5rem;
+    background: white;
+}
 .controls {
     margin-top: 40px;
+}
+.controls input {
+    cursor: pointer;
+}
+.controls input[disabled="disabled"] {
+    opacity: .2;
+    cursor: not-allowed;
 }
 
 .search {
@@ -160,3 +187,52 @@ html, body, * {
     margin-top: 40px;
     text-align: center;
 }
+
+/* 
+html, body, * {
+font-family: sans-serif;
+}
+:root {
+--bg-poison: purple;
+--bg-grass: green;
+}
+.card {
+background-color: white;
+padding: 1rem;
+border-radius: .5rem;
+max-width: 48rem;
+margin: 0 auto;
+}
+.card-title {
+text-transform: capitalize;
+font-size: 2rem;
+font-weight: bold;
+text-align: center;
+}
+.card-body {
+display: flex;
+}
+.type-list {
+display: flex;
+gap: .5rem;
+}
+.type-tag {
+padding: .5rem 1rem;
+color: white;
+text-transform: captialize;
+}
+.background {
+height: 100vh;
+width: 100vw;top: 0;left: 0;
+position: absolute;
+z-index: -1;
+background-color: var(--bg-<%= @pokemon.types[0].type.name %>);
+}
+.background--secondary {
+width: 50vw;
+height: 100vh;
+position: absolute;
+left: 50%;
+background-color: var(--bg-<%= @pokemon.types[1].type.name %>);
+}
+*/

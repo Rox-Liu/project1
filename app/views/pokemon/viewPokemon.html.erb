@@ -1,16 +1,33 @@
 <div class="pokecontainer">
     <div class="card">
         <div class="card-title">
-            <%= @pokemon.name %>
+            <div class="prev-pokemon">
+                <% if @pokemon_prev == nil %>
+                    <div></div>
+                <% else %>
+                    <%= link_to "← " + @pokemon_prev.name.upcase_first, pokemon_path(@pokemon_prev.id) %>
+                <% end %>
+            </div>
+            <%= @pokemon.name.upcase_first %> 
+            <div class="next-pokemon">
+                <% if @pokemon_next == nil %>
+                    <div></div>
+                <% else %>
+                    <%= link_to @pokemon_next.name.upcase_first + " →", pokemon_path(@pokemon_next.id) %>
+                <% end %>
+            </div>
         </div>
         <div class="card-body">
             <div class="card-image">
                 <img src="<%= @pokemon.sprites.front_default %>">
+                <img src="<%= @pokemon.sprites.back_default %>">
+                <img src="<%= @pokemon.sprites.front_shiny %>">
+                <img src="<%= @pokemon.sprites.back_shiny %>">
             </div>
             <div class="card-details">
                 <div class="type-list">
                     <% @pokemon.types.each do |type| %>
-                        <%= type.type.name %>
+                        <%= type.type.name.upcase_first %>
                     <% end %>
                 </div>
 
@@ -18,10 +35,20 @@
                 Hight: <%= @pokemon.height.to_f / 10 %>m
             </div>
 
+            <% if @evolution_chain.chain.evolves_to[0].present? %>
+            <div class="evolution">
+                <h3>Evolutions</h3>
+                <%= @evolution_chain.chain.species.name.upcase_first %>
+                ❯ <%= @evolution_chain.chain.evolves_to[0].species.name.upcase_first %> 
+                <% if @evolution_chain.chain.evolves_to[0].evolves_to[0].present? %>
+                ❯ <%= @evolution_chain.chain.evolves_to[0].evolves_to[0].species.name.upcase_first %>
+                <% end %>
+            </div>
+            <% end %>
 
             <div class="controls">
-                <%= button_to "Add to Favorite Pokemon", favorite_path(@pokemon.id), :method => :post %>
-                <%= button_to "Remove from Favorite Pokemon", favorite_path(@pokemon.id), :method => :delete, :data => { :confirm => 'Are you sure?' } %>
+                <%= button_to "Add to Favorite Pokemon", favorite_path(@pokemon.id), :method => :post, :disabled => @is_favorite %>
+                <%= button_to "Remove from Favorite Pokemon", favorite_path(@pokemon.id), :method => :delete, :disabled => !@is_favorite, :data => { :confirm => 'Are you sure?' } %>
             </div>
         </div>
     </div>

@@ -9,6 +9,7 @@
 <% @favorite_pokemon.each do |pokemon| %>
     <h3>
         <%= link_to pokemon.name, pokemon_path(pokemon.id) %>
+        <%= link_to image_tag("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + pokemon.id.to_s+ ".png", :class => "thumb"), pokemon_path(pokemon.id) %>
     </h3>
     <%= form_tag(favorite_path(pokemon.id), method: :delete, :data => { :confirm => 'Are you sure?' }) do %>
         <%= submit_tag 'Remove from favorites' %>

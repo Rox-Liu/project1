@@ -1,16 +1,11 @@
-<h1 class="typehead"><%= @pokemontypename %></h1>
-
 <div class="regiondetails">
     <% @pokemonlist.each do |pokemon| %>
     <div class="pokemon">
         <div class="pokemon-name">
-            <%= pokemon.pokemon.name %><br>
+            <%= pokemon.pokemon.name.upcase_first %><br>
         </div>
         <% pokemon_id = pokemon.pokemon.url.split('/')[-1] %>
         <%= link_to image_tag("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + pokemon_id + ".png", :class => "thumb"), "/pokemon/" + pokemon_id %>
     </div>
     <% end %>
-    
 </div>
-
-

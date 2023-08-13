@@ -4,7 +4,7 @@
     <% @pokemons.each do |pokemon| %>
     <div class="pokemon">
         <div class="pokemon-name">
-            # <%= pokemon.entry_number %> - <%= pokemon.pokemon_species.name %>
+            # <%= pokemon.entry_number %> - <%= pokemon.pokemon_species.name.upcase_first %>
         </div>
         <%= link_to image_tag("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + pokemon.entry_number.to_s + ".png"), "/pokemon/" + pokemon.entry_number.to_s %>
     </div>
