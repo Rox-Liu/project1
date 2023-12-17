@@ -1,12 +1,13 @@
 # netlify.toml
 [build]
-  publish = "public"
-  command = "bundle exec jekyll build"
   # ...
+  command = "bundle config build.pg --with-pg-config=/opt/buildhome/.rvm/rubies/ruby-2.7.8/bin/pg_config && bundle install"
 
 [build.environment]
   PG_CONFIG = "/opt/buildhome/.rvm/rubies/ruby-2.7.8/bin/pg_config"
-  LD_LIBRARY_PATH = "/path/to/postgresql/lib:$LD_LIBRARY_PATH"
+  LD_LIBRARY_PATH = "/opt/buildhome/.rvm/rubies/ruby-2.7.8/lib:$LD_LIBRARY_PATH"
 
-[build.pre]
-  commands = "sudo apt-get install libpq-dev"
+[build.packages]
+  # Add libpq-dev package
+  apt = ["libpq-dev"]
+
