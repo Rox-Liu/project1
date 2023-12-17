@@ -6,8 +6,10 @@
 [build.environment]
   PG_CONFIG = "/opt/buildhome/.rvm/rubies/ruby-2.7.8/bin/pg_config"
   LD_LIBRARY_PATH = "/opt/buildhome/.rvm/rubies/ruby-2.7.8/lib:$LD_LIBRARY_PATH"
+  C_INCLUDE_PATH = "/opt/buildhome/.rvm/rubies/ruby-2.7.8/include:$C_INCLUDE_PATH"
 
 [build.packages]
   # Add libpq-dev package
   apt = ["libpq-dev"]
+
 
