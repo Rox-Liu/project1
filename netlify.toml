@@ -4,3 +4,7 @@
 
 [build.environment]
   PG_CONFIG = "/opt/buildhome/.rvm/rubies/ruby-2.7.8/bin/pg_config"
+  LD_LIBRARY_PATH = "/path/to/postgresql/lib:$LD_LIBRARY_PATH"
+
+[build.pre]
+  commands = "sudo apt-get install libpq-dev"
