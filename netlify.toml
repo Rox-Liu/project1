@@ -1,5 +1,7 @@
 # netlify.toml
 [build]
+  publish = "public"
+  command = "bundle exec jekyll build"
   # ...
 
 [build.environment]
